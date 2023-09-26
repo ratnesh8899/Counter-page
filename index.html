@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 300px;
+            width: 30%;
+            border: 5px;
+            background-color: aqua;
+            margin-left: 35%;
+            border-radius: 30px
+        }
+
+        h1 {
+            padding-top: 100px;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        .primary {
+            background-color: rgb(10, 30, 218);
+            padding: 10px;
+            border-radius: 10px
+        }
+
+        .danger {
+            background-color: red;
+            padding: 10px;
+            border-radius: 10px
+        }
+
+        .sucess {
+            background-color: blue;
+            padding: 10px;
+            border-radius: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Counter</h1>
+        <p class="counter-preview">0</p>
+        <div class="btn">
+            <button id="increment" class="primary">Increment</button>
+            <button id="reset" class="danger">Reset</button>
+            <button id="decrement" class="sucess">Decrement</button>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    const display = document.querySelector('.counter-preview');
+    const incrementBtn = document.querySelector('#increment');
+    const resetBtn = document.querySelector('#reset');
+    const decrementBtn = document.querySelector('#decrement');
+
+
+    incrementBtn.addEventListener('click', increment);
+    decrementBtn.addEventListener('click', decrement);
+    resetBtn.addEventListener('click', reset);
+
+    let value = 0;
+    function increment() {
+        value += 1;
+        display.textContent = value;
+    }
+
+    function decrement() {
+        value -= 1;
+        display.textContent = value;
+    }
+
+    function reset() {
+        value = 0;
+        display.textContent = value;
+    }
+</script>
+
+</html>
